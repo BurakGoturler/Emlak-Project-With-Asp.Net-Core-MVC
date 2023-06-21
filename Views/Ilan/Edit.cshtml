@@ -1,0 +1,104 @@
+﻿@model Emlak.Models.Ilan
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h1>İlanı Düzenle</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Fiyat" class="control-label"></label>
+                <input asp-for="Fiyat" class="form-control" />
+                <span asp-validation-for="Fiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Durum" class="control-label"></label>
+                <select asp-for="Durum" class="form-control" asp-items="ViewBag.Durum"></select>
+                <span asp-validation-for="Durum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tip" class="control-label"></label>
+                <select asp-for="Tip" class="form-control" asp-items="ViewBag.Tip"></select>
+                <span asp-validation-for="Tip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alan" class="control-label"></label>
+                <input asp-for="Alan" class="form-control" />
+                <span asp-validation-for="Alan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdaSayisi" class="control-label"></label>
+                <input asp-for="OdaSayisi" class="form-control" />
+                <span asp-validation-for="OdaSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BanyoSayisi" class="control-label"></label>
+                <input asp-for="BanyoSayisi" class="form-control" />
+                <span asp-validation-for="BanyoSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kat" class="control-label"></label>
+                <input asp-for="Kat" class="form-control" />
+                <span asp-validation-for="Kat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres" class="control-label"></label>
+                <textarea asp-for="Adres" class="form-control" style="width: 420px; height: 320px" ;> </textarea>
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mahalle" class="control-label"></label>
+                <select asp-for="Mahalle" class="form-control" asp-items="ViewBag.Mahalle"></select>
+                <span asp-validation-for="Mahalle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Semt" class="control-label"></label>
+                <select asp-for="Semt" class="form-control" asp-items="ViewBag.Semt"></select>
+                <span asp-validation-for="Semt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sehir" class="control-label"></label>
+                <select asp-for="Sehir" class="form-control" asp-items="ViewBag.Sehir"></select>
+                <span asp-validation-for="Sehir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefon" class="control-label"></label>
+                <input asp-for="Telefon" class="form-control" />
+                <span asp-validation-for="Telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarih" class="control-label"></label>
+                <input asp-for="Tarih" class="form-control" />
+                <span asp-validation-for="Tarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aciklama" class="control-label"></label>
+                <textarea asp-for="Aciklama" class="form-control" style="width: 420px; height: 320px" ;> </textarea>
+                <span asp-validation-for="Aciklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resim" class="control-label"></label>
+                <select asp-for="Resim" class="form-control" asp-items="ViewBag.Resim"></select>
+                <span asp-validation-for="Resim" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Düzenlemeleri Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Geri Dön</a>
+</div>
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

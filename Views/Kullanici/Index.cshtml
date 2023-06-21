@@ -1,0 +1,135 @@
+﻿@using System.Security.Claims;
+@model IEnumerable<Emlak.Models.Ilan>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+
+	var username = "";
+	var role = "";
+	if (User.Identity.IsAuthenticated) // oturum açtı mı?
+	{
+		username = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+		role = User.FindFirst(ClaimTypes.Role).Value;
+	}
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+	<text>
+		<div>
+			User Name : @username
+		</div>
+	</text>
+}
+
+
+<h1>İlanlar</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Fiyat)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Alan)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.OdaSayisi)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.BanyoSayisi)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Kat)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Adres)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Telefon)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Tarih)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Aciklama)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DurumNavigation)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.MahalleNavigation)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ResimNavigation)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.SehirNavigation)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.SemtNavigation)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.TipNavigation)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Fiyat)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Alan)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.OdaSayisi)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.BanyoSayisi)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Kat)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Adres)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Telefon)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Tarih)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Aciklama)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DurumNavigation.Durum1)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.MahalleNavigation.Ad)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ResimNavigation.Resim1)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.SehirNavigation.Ad)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.SemtNavigation.Ad)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.TipNavigation.Tip1)
+				</td>
+				<td>
+					<a asp-action="Details" asp-route-id="@item.Id">İlanı İncele</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

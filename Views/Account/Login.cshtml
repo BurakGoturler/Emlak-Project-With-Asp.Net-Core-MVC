@@ -1,0 +1,17 @@
+﻿@model Emlak.ViewModels.LoginViewModel
+
+<h1>Giriş Yap</h1>
+
+<hr />
+
+<form asp-controller="Account" asp-action="Login" method="post">
+	<div>
+		<label asp-for="KullaniciAdi" />
+		<input type="text" asp-for="KullaniciAdi" />
+	</div>
+	<div>
+		<label asp-for="Sifre" />
+		<input type="password" asp-for="Sifre" />
+	</div>
+	<button type="submit">Login</button>
+</form>

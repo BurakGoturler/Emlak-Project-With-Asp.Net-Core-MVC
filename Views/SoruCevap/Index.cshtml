@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Emlak.Models.SoruCevap>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sorular</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Ad)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Tarih)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Soru)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Cevap)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Ad)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Tarih)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Soru)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Cevap)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> | <br>
+					<a asp-action="Details" asp-route-id="@item.Id">Detaylar</a>  <br>
+					<a asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

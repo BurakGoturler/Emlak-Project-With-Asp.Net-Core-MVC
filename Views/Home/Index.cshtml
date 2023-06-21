@@ -1,0 +1,23 @@
+﻿@using System.Security.Claims;
+@{
+	ViewData["Title"] = "";
+
+	var username = "";
+	var role = "";
+	if (User.Identity.IsAuthenticated) // oturum açtı mı?
+	{
+		username = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+		role = User.FindFirst(ClaimTypes.Role).Value;
+	}
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+	<div>
+		Logged in username : @username
+	</div>
+
+	<div>
+		@Html.ActionLink("Çıkış Yap", "Logout", "Account");
+	</div>
+}
