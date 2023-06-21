@@ -40,22 +40,32 @@
 								role = false;
 							}
 						}
-						@if(role){
-						<li class="nav-item">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Ilan" asp-action="Index">İlanlar</a>
-						</li>
+						@if (role)
+						{
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="" asp-controller="Ilan" asp-action="Index">>İlanlar</a>
+							</li>
+						}
+						@if (!User.Identity.IsAuthenticated)
+						{
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">>Giriş Yap</a>
+							</li>
+						}
+						else
+						{
+							<li class="nav-item">
+								<a class="nav-link text-dark" asp-area="" asp-action="Logout" asp-controller="Account">>Çıkış Yap</a>
+							</li>
 						}
 						<li class="nav-item">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Giriş Yap</a>
+							<a class="nav-link text-dark" asp-area="" asp-controller="KullaniciSoruCevap" asp-action="Create">>Soru Sor</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-dark" asp-area="" asp-controller="SoruCevap" asp-action="Create">Soru Sor</a>
+							<a class="nav-link text-dark" asp-area="" asp-controller="KullaniciSoruCevap" asp-action="Index">>Soru Cevap</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-dark" asp-area="" asp-controller="SoruCevap" asp-action="Index">Soru Cevap</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Kullanici" asp-action="Index">İlanlar</a>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Kullanici" asp-action="Index">>İlanlar</a>
 						</li>
 					</ul>
 				</div>

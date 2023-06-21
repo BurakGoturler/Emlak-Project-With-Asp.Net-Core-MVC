@@ -36,7 +36,7 @@ namespace Emlak.Controllers
 						var LogedUser = _context.Kullanicilars.FirstOrDefault(X => X.KullaniciAdi == entity.KullaniciAdi && X.Sifre == entity.Sifre);
                         var claims = new List<Claim>
                         {
-                             new Claim(ClaimTypes.NameIdentifier, entity.KullaniciAdi), new Claim(ClaimTypes.Role, LogedUser.Rol.Ad)
+                             new Claim(ClaimTypes.NameIdentifier, entity.KullaniciAdi), new Claim(ClaimTypes.Role, LogedUser.RolId.ToString())
                         };
 
                         ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -44,7 +44,7 @@ namespace Emlak.Controllers
 
 						await HttpContext.SignInAsync( CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
 
-						if (LogedUser.Rol.Ad == "Admin")
+						if (LogedUser.RolId == 1)
 						{
                             return RedirectToAction("Index", "Admin");
 						}
@@ -80,7 +80,7 @@ namespace Emlak.Controllers
 			{
 				TempData["msg"] = ex.Message;
 			}
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("Login", "Account");
 		}
 
 		private bool CheckUser(string userName, string password)
