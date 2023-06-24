@@ -66,11 +66,38 @@ namespace Emlak.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Fiyat,Durum,Tip,Alan,OdaSayisi,BanyoSayisi,Kat,Adres,Mahalle,Semt,Sehir,Telefon,Tarih,Aciklama,Resim")] Ilan ilan)
+        public async Task<IActionResult> Create([FromForm] Ilan ilan)
         {
+
+
+
             if (ModelState.IsValid)
             {
                 _context.Add(ilan);
+                if (ilan.ImageFile != null && ilan.ImageFile.Length > 0)
+					{
+						var uniqueFileName = Guid.NewGuid().ToString() + "_" + ilan.ImageFile.FileName;
+						var filePath = Path.Combine(Directory.GetCurrentDirectory(), "image", uniqueFileName);
+
+						using (var fileStream = new FileStream(filePath, FileMode.Create))
+						{
+							await ilan.ImageFile.CopyToAsync(fileStream);
+						}
+
+						// Resim dosyasının yolunu veritabanına kaydet
+						var resim = new Resim
+						{
+							Resim1= filePath // veya sadece resim dosyasının adını kaydetmek isterseniz: uniqueFileName
+											// Diğer özellikler
+						};
+
+						// DbContext üzerinden veritabanına ekleme işlemini gerçekleştirin
+						_context.Resims.Add(resim);
+					}
+
+
+
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

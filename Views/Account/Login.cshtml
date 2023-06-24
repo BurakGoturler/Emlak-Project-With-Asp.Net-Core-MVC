@@ -6,12 +6,20 @@
 
 <form asp-controller="Account" asp-action="Login" method="post">
 	<div>
+		Kullanıcı Adı
+		<br />
 		<label asp-for="KullaniciAdi" />
 		<input type="text" asp-for="KullaniciAdi" />
 	</div>
 	<div>
+		Şifre
+		<br />
 		<label asp-for="Sifre" />
 		<input type="password" asp-for="Sifre" />
 	</div>
 	<button type="submit">Login</button>
+
 </form>
+<div>
+	<a asp-action="Register">Hesabın Yok Mu? Hemen Kayıt Ol</a>
+</div>

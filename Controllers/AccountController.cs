@@ -83,6 +83,30 @@ namespace Emlak.Controllers
 			return RedirectToAction("Login", "Account");
 		}
 
+		// GET: Uyeler/Create
+		public IActionResult Register()
+		{
+			return View();
+		}
+
+		// POST: Uyeler/Create
+		// To protect from overposting attacks, enable the specific properties you want to bind to.
+		// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Register([FromForm] Kullanicilar kullanicilar)
+		{
+			if (ModelState.IsValid)
+			{
+				kullanicilar.RolId	= 12;
+
+				_context.Add(kullanicilar);
+				await _context.SaveChangesAsync();
+				return RedirectToAction(nameof(Login));
+			}
+			return View(kullanicilar);
+		}
+
 		private bool CheckUser(string userName, string password)
 		{
 			var user = _context.Kullanicilars.FirstOrDefault(x => x.KullaniciAdi == userName && x.Sifre == password);
