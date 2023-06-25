@@ -16,7 +16,7 @@ namespace Emlak.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var emlakContext = _context.Ilans.Include(i => i.DurumNavigation).Include(i => i.MahalleNavigation).Include(i => i.ResimNavigation).Include(i => i.SehirNavigation).Include(i => i.SemtNavigation).Include(i => i.TipNavigation);
+            var emlakContext = _context.Ilans.Include(i => i.DurumNavigation).Include(i => i.MahalleNavigation).Include(i => i.Resims).Include(i => i.SehirNavigation).Include(i => i.SemtNavigation).Include(i => i.TipNavigation);
             return View(await emlakContext.ToListAsync());
         }
 
@@ -30,7 +30,7 @@ namespace Emlak.Controllers
             var ilan = await _context.Ilans
                 .Include(i => i.DurumNavigation)
                 .Include(i => i.MahalleNavigation)
-                .Include(i => i.ResimNavigation)
+                .Include(i => i.Resims)
                 .Include(i => i.SehirNavigation)
                 .Include(i => i.SemtNavigation)
                 .Include(i => i.TipNavigation)
@@ -39,6 +39,8 @@ namespace Emlak.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.resim = _context.Resims.Where(x => x.IlanId == id).ToList();
             return View(ilan);
         }
     }

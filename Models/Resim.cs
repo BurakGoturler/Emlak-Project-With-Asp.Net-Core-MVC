@@ -9,5 +9,7 @@ public partial class Resim
 
     public string? Resim1 { get; set; }
 
-    public virtual ICollection<Ilan> Ilans { get; set; } = new List<Ilan>();
+    public int? IlanId { get; set; }
+
+    public virtual Ilan? Ilan { get; set; }
 }

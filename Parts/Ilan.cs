@@ -10,5 +10,5 @@ namespace Emlak.Models;
 public partial class Ilan
 {
     [NotMapped]
-    public IFormFile? ImageFile { get; set; }
+    public List<IFormFile>? ImageFile { get; set; }
 }

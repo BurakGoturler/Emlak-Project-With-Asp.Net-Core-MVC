@@ -35,7 +35,6 @@ public partial class EmlakContext : DbContext
 
     public virtual DbSet<Tip> Tips { get; set; }
 
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Durum>(entity =>
@@ -63,10 +62,6 @@ public partial class EmlakContext : DbContext
             entity.HasOne(d => d.MahalleNavigation).WithMany(p => p.Ilans)
                 .HasForeignKey(d => d.Mahalle)
                 .HasConstraintName("FK_Ilan_Mahalle");
-
-            entity.HasOne(d => d.ResimNavigation).WithMany(p => p.Ilans)
-                .HasForeignKey(d => d.Resim)
-                .HasConstraintName("FK_Ilan_Resim");
 
             entity.HasOne(d => d.SehirNavigation).WithMany(p => p.Ilans)
                 .HasForeignKey(d => d.Sehir)
@@ -109,6 +104,10 @@ public partial class EmlakContext : DbContext
             entity.Property(e => e.Resim1)
                 .HasColumnType("text")
                 .HasColumnName("Resim");
+
+            entity.HasOne(d => d.Ilan).WithMany(p => p.Resims)
+                .HasForeignKey(d => d.IlanId)
+                .HasConstraintName("FK_Resim_Ilan");
         });
 
         modelBuilder.Entity<Rol>(entity =>

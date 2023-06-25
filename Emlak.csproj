@@ -17,7 +17,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="image\" />
+    <Folder Include="wwwroot\image\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\image\0efef92d-488a-4dee-befc-1304d0acba9e_WhatsApp Görsel 2023-06-24 saat 19.48.59.jpg" />
+    <None Include="wwwroot\image\5d0684e1-2422-4880-b3d4-472359e4c312_Ekran Görüntüsü %28212%29.png" />
+    <None Include="wwwroot\image\d8243dec-7632-4a87-a813-402f357ff5ae_Ekran Görüntüsü %28211%29.png" />
+    <None Include="wwwroot\image\d8a2ed09-2a5f-4e50-b380-7dfe1d1a4c53_Ekran Görüntüsü %28219%29.png" />
+    <None Include="wwwroot\image\e05f76df-b582-436d-9035-eef0dd763d5a_Ekran Görüntüsü %28183%29.png" />
+    <None Include="wwwroot\image\e129406f-dcd6-40ba-88d3-e1c00031e5dc_Ekran Görüntüsü %28183%29.png" />
+    <None Include="wwwroot\image\Ekran Görüntüsü %28183%29.png" />
   </ItemGroup>
 
 </Project>

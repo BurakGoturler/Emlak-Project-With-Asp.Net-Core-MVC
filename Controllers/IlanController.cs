@@ -21,7 +21,7 @@ namespace Emlak.Controllers
         // GET: Ilan
         public async Task<IActionResult> Index()
         {
-            var emlakContext = _context.Ilans.Include(i => i.DurumNavigation).Include(i => i.MahalleNavigation).Include(i => i.ResimNavigation).Include(i => i.SehirNavigation).Include(i => i.SemtNavigation).Include(i => i.TipNavigation);
+            var emlakContext = _context.Ilans.Include(i => i.DurumNavigation).Include(i => i.MahalleNavigation).Include(i => i.Resims).Include(i => i.SehirNavigation).Include(i => i.SemtNavigation).Include(i => i.TipNavigation);
             return View(await emlakContext.ToListAsync());
         }
 
@@ -36,7 +36,7 @@ namespace Emlak.Controllers
             var ilan = await _context.Ilans
                 .Include(i => i.DurumNavigation)
                 .Include(i => i.MahalleNavigation)
-                .Include(i => i.ResimNavigation)
+                .Include(i => i.Resims)
                 .Include(i => i.SehirNavigation)
                 .Include(i => i.SemtNavigation)
                 .Include(i => i.TipNavigation)
@@ -45,7 +45,7 @@ namespace Emlak.Controllers
             {
                 return NotFound();
             }
-
+            ViewBag.resim=_context.Resims.Where(x=>x.IlanId == id).ToList();
             return View(ilan);
         }
 
@@ -74,14 +74,15 @@ namespace Emlak.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(ilan);
-                if (ilan.ImageFile != null && ilan.ImageFile.Length > 0)
+                if (ilan.ImageFile != null && ilan.ImageFile.Count> 0)
 					{
-						var uniqueFileName = Guid.NewGuid().ToString() + "_" + ilan.ImageFile.FileName;
+                    foreach (var item in ilan.ImageFile) { 
+						var uniqueFileName = Guid.NewGuid().ToString() + "_" + item.FileName;
 						var filePath = Path.Combine(Directory.GetCurrentDirectory(), "image", uniqueFileName);
 
 						using (var fileStream = new FileStream(filePath, FileMode.Create))
 						{
-							await ilan.ImageFile.CopyToAsync(fileStream);
+							await item.CopyToAsync(fileStream);
 						}
 
 						// Resim dosyasının yolunu veritabanına kaydet
@@ -92,18 +93,15 @@ namespace Emlak.Controllers
 						};
 
 						// DbContext üzerinden veritabanına ekleme işlemini gerçekleştirin
-						_context.Resims.Add(resim);
+                        ilan.Resims.Add(resim);
 					}
-
-
-
+                }
 
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["Durum"] = new SelectList(_context.Durums, "Id", "Durum1", ilan.Durum);
             ViewData["Mahalle"] = new SelectList(_context.Mahalles, "Id", "Ad", ilan.Mahalle);
-            ViewData["Resim"] = new SelectList(_context.Resims, "Id", "Id", ilan.Resim);
             ViewData["Sehir"] = new SelectList(_context.Sehirs, "Id", "Ad", ilan.Sehir);
             ViewData["Semt"] = new SelectList(_context.Semts, "Id", "Ad", ilan.Semt);
             ViewData["Tip"] = new SelectList(_context.Tips, "Id", "Tip1", ilan.Tip);
@@ -125,7 +123,6 @@ namespace Emlak.Controllers
             }
             ViewData["Durum"] = new SelectList(_context.Durums, "Id", "Durum1", ilan.Durum);
             ViewData["Mahalle"] = new SelectList(_context.Mahalles, "Id", "Ad", ilan.Mahalle);
-            ViewData["Resim"] = new SelectList(_context.Resims, "Id", "Resim", ilan.Resim);
             ViewData["Sehir"] = new SelectList(_context.Sehirs, "Id", "Ad", ilan.Sehir);
             ViewData["Semt"] = new SelectList(_context.Semts, "Id", "Ad", ilan.Semt);
             ViewData["Tip"] = new SelectList(_context.Tips, "Id", "Tip1", ilan.Tip);
@@ -166,7 +163,6 @@ namespace Emlak.Controllers
             }
             ViewData["Durum"] = new SelectList(_context.Durums, "Id", "Durum1", ilan.Durum);
             ViewData["Mahalle"] = new SelectList(_context.Mahalles, "Id", "Ad", ilan.Mahalle);
-            ViewData["Resim"] = new SelectList(_context.Resims, "Id", "Id", ilan.Resim);
             ViewData["Sehir"] = new SelectList(_context.Sehirs, "Id", "Ad", ilan.Sehir);
             ViewData["Semt"] = new SelectList(_context.Semts, "Id", "Ad", ilan.Semt);
             ViewData["Tip"] = new SelectList(_context.Tips, "Id", "Tip1", ilan.Tip);
@@ -184,7 +180,7 @@ namespace Emlak.Controllers
             var ilan = await _context.Ilans
                 .Include(i => i.DurumNavigation)
                 .Include(i => i.MahalleNavigation)
-                .Include(i => i.ResimNavigation)
+                .Include(i => i.Resims)
                 .Include(i => i.SehirNavigation)
                 .Include(i => i.SemtNavigation)
                 .Include(i => i.TipNavigation)

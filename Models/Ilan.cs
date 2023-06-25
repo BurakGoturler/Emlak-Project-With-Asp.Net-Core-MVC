@@ -35,13 +35,11 @@ public partial class Ilan
 
     public string? Aciklama { get; set; }
 
-    public int? Resim { get; set; }
-
     public virtual Durum? DurumNavigation { get; set; }
 
     public virtual Mahalle? MahalleNavigation { get; set; }
 
-    public virtual Resim? ResimNavigation { get; set; }
+    public virtual ICollection<Resim> Resims { get; set; } = new List<Resim>();
 
     public virtual Sehir? SehirNavigation { get; set; }
 
