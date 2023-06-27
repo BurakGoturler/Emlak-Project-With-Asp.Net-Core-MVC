@@ -5,9 +5,7 @@
     Layout = "~/Views/Shared/Admin_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Kullanicilar</h4>
+<h1>Üye Ekle</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -38,13 +36,12 @@
                 <select asp-for="RolId" class ="form-control" asp-items="ViewBag.RolId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Ekle" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Geri Dön</a>
 </div>
-

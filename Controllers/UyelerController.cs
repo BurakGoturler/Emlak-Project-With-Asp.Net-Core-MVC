@@ -64,7 +64,7 @@ namespace Emlak.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RolId"] = new SelectList(_context.Rols, "Id", "Id", kullanicilar.RolId);
+            ViewData["RolId"] = new SelectList(_context.Rols, "Id", "Ad", kullanicilar.RolId);
             return View(kullanicilar);
         }
 
