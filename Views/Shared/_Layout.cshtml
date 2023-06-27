@@ -69,7 +69,7 @@
 							<a class="nav-link text-dark" asp-area="" asp-controller="KullaniciSoruCevap" asp-action="Index">>Soru Cevap</a>
 						</li>
 						<li class="nav-item">
-							<a	 class="nav-link text-dark" asp-area="" asp-controller="Kullanici" asp-action="Index">>İlanlar</a	>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Kullanici" asp-action="Index">>İlanlar</a>
 						</li>
 					</ul>
 				</div>
@@ -87,9 +87,33 @@
 			&copy; 2023 - Emlak - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
 		</div>
 	</footer>
+
+
+
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+	<script>
+		const options = {
+			bottom: '64px', // default: '32px'
+			right: 'unset', // default: '32px'
+			left: '32px', // default: 'unset'
+			time: '1.5s', // default: '0.3s'
+			mixColor: '#fff', // default: '#fff'
+			backgroundColor: '#fff',  // default: '#fff'
+			buttonColorDark: '#100f2c',  // default: '#100f2c'
+			buttonColorLight: '#fff', // default: '#fff'
+			saveInCookies: true, // default: true,
+			label: '🌓', // default: ''
+			autoMatchOsTheme: true // default: true
+		}
+
+		const darkmode = new Darkmode(options);
+		darkmode.showWidget();
+	</script>
+
 	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

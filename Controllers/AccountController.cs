@@ -15,7 +15,7 @@ namespace Emlak.Controllers
 		public AccountController()
 		{
 			_context = new EmlakContext();
-		}
+		}				
 
 		public IActionResult Login()
 		{
@@ -90,8 +90,6 @@ namespace Emlak.Controllers
 		}
 
 		// POST: Uyeler/Create
-		// To protect from overposting attacks, enable the specific properties you want to bind to.
-		// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Register([FromForm] Kullanicilar kullanicilar)
@@ -102,7 +100,7 @@ namespace Emlak.Controllers
 
 				_context.Add(kullanicilar);
 				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Login));
+				return RedirectToAction(nameof(Login));		
 			}
 			return View(kullanicilar);
 		}
