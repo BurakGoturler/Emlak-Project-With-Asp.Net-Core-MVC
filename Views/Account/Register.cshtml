@@ -1,11 +1,11 @@
-﻿    @model Emlak.Models.Kullanicilar
+﻿@model Emlak.Models.Kullanicilar
 
 @{
-    ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Title"] = "Create";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Kayıt Ol</h1>
+@*<h1>Kayıt Ol</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -34,7 +34,7 @@
             @*<div class="form-group">
                 <label asp-for="RolId" class="control-label"></label>
                 <select asp-for="RolId" class ="form-control" asp-items="ViewBag.RolId"></select>
-            </div>*@
+            </div>
             <div class="form-group">
                 <input type="submit" value="Kayıt Ol" class="btn btn-primary" />
             </div>
@@ -44,4 +44,98 @@
 
 <div>
     <a asp-action="Login">Zaten Hesabın Var Mı? Giriş Yap!</a>
-</div>
+</div>*@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kayıt Ol</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		.container {
+			width: 700px;
+			margin: 9px 650px 2px auto;
+			border: 1px solid #ccc;
+			border-radius: 25px;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		form {
+			margin-top: 50px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+		}
+
+		button[type="submit"] {
+			width: 100%;
+			padding: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		button[type="submit"]:hover {
+			background-color: #45a049;
+		}
+
+		.login-link {
+			text-align: center;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Kayıt Ol</h1>
+		<hr />
+		<div class="row">
+			<div class="col-md-4">
+				<form method="post" action="/Account/Register">
+					<div>
+						<label for="Ad">Ad</label>
+						<input type="text" id="Ad" name="Ad" required />
+					</div>
+					<div>
+						<label for="Soyad">Soyad</label>
+						<input type="text" id="Soyad" name="Soyad" required />
+					</div>
+					<div>
+						<label for="KullaniciAdi">Kullanıcı Adı</label>
+						<input type="text" id="KullaniciAdi" name="KullaniciAdi" required />
+					</div>
+					<div>
+						<label for="Sifre">Şifre</label>
+						<input type="password" id="Sifre" name="Sifre" required />
+					</div>
+					<button type="submit">Kayıt Ol</button>
+				</form>
+			</div>
+		</div>
+		<div class="login-link">
+			<a href="/Account/Login">Zaten Hesabın Var Mı? Giriş Yap!</a>
+		</div>
+	</div>
+</body>
+</html>
