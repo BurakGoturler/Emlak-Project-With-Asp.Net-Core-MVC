@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>S.S.S</h1>
+@*<h1>S.S.S</h1>
 
 <table class="table">
     <thead>
@@ -42,4 +42,97 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>S.S.S</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		.container {
+			max-width: 2800px;
+			margin: 40px 220px 10px auto;
+			padding: 30px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 0;
+			color: #333;
+		}
+
+		.table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 30px;
+		}
+
+			.table th,
+			.table td {
+				padding: 8px;
+				border: 1px solid #ccc;
+				text-align: left;
+			}
+
+			.table th {
+				background-color: #f2f2f2;
+				font-weight: bold;
+				color: #333;
+			}
+
+			.table tr:nth-child(even) {
+				background-color: #f9f9f9;
+			}
+
+		.return-link {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+			.return-link a {
+				color: #777;
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+
+				.return-link a:hover {
+					color: #333;
+				}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>S.S.S</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Ad</th>
+					<th>Soru</th>
+					<th>Tarih</th>
+					<th>Cevap</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@Html.DisplayFor(modelItem => item.Ad)</td>
+						<td>@Html.DisplayFor(modelItem => item.Soru)</td>
+						<td>@Html.DisplayFor(modelItem => item.Tarih)</td>
+						<td>@Html.DisplayFor(modelItem => item.Cevap)</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

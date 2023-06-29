@@ -100,7 +100,7 @@ namespace Emlak.Controllers
 
 				_context.Add(kullanicilar);
 				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Login));		
+				return RedirectToAction(nameof(Login));			
 			}
 			return View(kullanicilar);
 		}

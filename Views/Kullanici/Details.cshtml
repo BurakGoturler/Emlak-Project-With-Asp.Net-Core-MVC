@@ -5,7 +5,194 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>İlan Hakkında</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>İlan Hakkında</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		
+		.container {
+			max-width: 1800px;
+			margin: 2px auto;
+			padding: 30px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 0;
+			color: #333;
+		}
+		
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -15px;
+		}
+		
+		.col-sm-2,
+		.col-sm-10 {
+			padding: 15px;
+		}
+		
+		.col-sm-2 {
+			flex-basis: 20%;
+			font-weight: bold;
+			color: #333;
+		}
+		
+		.col-sm-10 {
+			flex-basis: 80%;
+		}
+		
+		hr {
+			border: none;
+			border-top: 1px solid #ccc;
+			margin: 20px 0;
+		}
+		
+		.image-container {
+			display: flex;
+			flex-wrap: wrap;
+			margin: -10px;
+		}
+		
+		.image-container img {
+			width: 100px;
+			height: 100px;
+			object-fit: cover;
+			margin: 10px;
+		}
+		
+		.back-link {
+			display: block;
+			text-align: center;
+			margin-top: 20px;
+			color: #007bff;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+		
+		.back-link:hover {
+			color: #0056b3;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>İlan Hakkında</h1>
+		<hr />
+		<div class="row">
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Fiyat)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.Fiyat)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Alan)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.Alan)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.OdaSayisi)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.OdaSayisi)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.BanyoSayisi)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.BanyoSayisi)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Kat)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.Kat)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Adres)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.Adres)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Telefon)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.Telefon)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Tarih)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.Tarih)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Aciklama)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.Aciklama)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.DurumNavigation)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.DurumNavigation.Durum1)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.MahalleNavigation)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.MahalleNavigation.Ad)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.Resims)
+			</div>
+			<div class="col-sm-10 image-container">
+				@foreach (var item in ViewBag.resim)
+				{
+					<img src="~/image/@item.Resim1" alt="Resim" />
+				}
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.SehirNavigation)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.SehirNavigation.Ad)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.SemtNavigation)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.SemtNavigation.Ad)
+			</div>
+			<div class="col-sm-2">
+				@Html.DisplayNameFor(model => model.TipNavigation)
+			</div>
+			<div class="col-sm-10">
+				@Html.DisplayFor(model => model.TipNavigation.Tip1)
+			</div>
+		</div>
+		<div>
+			<a class="back-link" asp-action="Index">Geri Dön</a>
+		</div>
+	</div>
+</body>
+</html>
+
+
+@*<h1>İlan Hakkında</h1>
 
 <div>
     <hr />
@@ -83,7 +270,7 @@
             @foreach (var item in ViewBag.resim)
                 {
                     <img src="~/image/@item.Resim1)"/>
-                    @*@Html.DisplayFor(model => model.Resims)*@
+                    @Html.DisplayFor(model => model.Resims)
                 }
         </dd>
         <dt class = "col-sm-2">
@@ -108,4 +295,4 @@
 </div>
 <div>
     <a asp-action="Index">Geri Dön</a>
-</div>
+</div>*@
