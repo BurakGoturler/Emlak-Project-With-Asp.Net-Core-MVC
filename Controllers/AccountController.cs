@@ -100,12 +100,12 @@ namespace Emlak.Controllers
 
 				_context.Add(kullanicilar);
 				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Login));			
+				return RedirectToAction(nameof(Login));
 			}
 			return View(kullanicilar);
 		}
 
-		private bool CheckUser(string userName, string password)
+		private bool CheckUser(string userName, string password)	
 		{
 			var user = _context.Kullanicilars.FirstOrDefault(x => x.KullaniciAdi == userName && x.Sifre == password);
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Emlak.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Emlak.Controllers
@@ -10,5 +11,5 @@ namespace Emlak.Controllers
 		{
 			return View();
 		}
-	}
+    }
 }

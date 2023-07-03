@@ -110,7 +110,7 @@ public partial class EmlakContext : DbContext
                 .HasConstraintName("FK_Resim_Ilan");
         });
 
-        modelBuilder.Entity<Rol>(entity =>
+        modelBuilder.Entity<Rol>(entity => // Burası admin controlerdaki authorize ile ilişkili
         {
             entity.ToTable("Rol");
 

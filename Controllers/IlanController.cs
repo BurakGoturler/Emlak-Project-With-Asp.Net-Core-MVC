@@ -61,42 +61,33 @@ namespace Emlak.Controllers
             return View();
         }
 
-        // POST: Ilan/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([FromForm] Ilan ilan)
         {
-
-
-
-            if (ModelState.IsValid)
+			_context.Add(ilan);
+			if (ModelState.IsValid)
             {
-                _context.Add(ilan);
-                if (ilan.ImageFile != null && ilan.ImageFile.Count> 0)
-					{
-                    foreach (var item in ilan.ImageFile) { 
-						var uniqueFileName = Guid.NewGuid().ToString() + "_" + item.FileName;
-						var filePath = Path.Combine(Directory.GetCurrentDirectory(), "image", uniqueFileName);
+				if (ilan.ImageFile != null && ilan.ImageFile.Count > 0)
+                {
+                    foreach (var item in ilan.ImageFile)
+                    {
+                        var uniqueFileName = Guid.NewGuid().ToString() + "_" + item.FileName;
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "~/image", uniqueFileName);
 
-						using (var fileStream = new FileStream(filePath, FileMode.Create))
-						{
-							await item.CopyToAsync(fileStream);
-						}
-
-						// Resim dosyasının yolunu veritabanına kaydet
-						var resim = new Resim
-						{
-							Resim1= filePath // veya sadece resim dosyasının adını kaydetmek isterseniz: uniqueFileName
-											// Diğer özellikler
-						};
-
-						// DbContext üzerinden veritabanına ekleme işlemini gerçekleştirin
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await item.CopyToAsync(fileStream);
+                        }
+                        // Resim dosyasının yolunu veritabanına kaydet
+                        var resim = new Resim
+                        {
+                            Resim1 = filePath // veya sadece resim dosyasının adını kaydetmek isterseniz: uniqueFileName
+                        };
+                        // DbContext üzerinden veritabanına ekleme işlemini gerçekleştirin
                         ilan.Resims.Add(resim);
-					}
+                    }
                 }
-
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
