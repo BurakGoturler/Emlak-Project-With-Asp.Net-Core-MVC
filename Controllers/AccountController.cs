@@ -11,7 +11,6 @@ namespace Emlak.Controllers
 	public class AccountController : Controller
 	{
 		private readonly EmlakContext _context;
-
 		public AccountController()
 		{
 			_context = new EmlakContext();
