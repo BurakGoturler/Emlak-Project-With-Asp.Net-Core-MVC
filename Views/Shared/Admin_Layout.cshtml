@@ -39,13 +39,13 @@
 				</div>
 				<div class="sidebar-brand-text mx-3">Admin Paneli <sup></sup></div>
 			</a>
-
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active">
 				<a class="nav-link" asp-controller="Admin" asp-action="Index">
 					<span>Admin Paneli</span>
 				</a>
 			</li>
+			<hr>
 			<li class="nav-item active">
 				<a class="nav-link" asp-controller="Ilan" asp-action="Index">
 					<span>İlanları İncele</span>
@@ -53,9 +53,10 @@
 			</li>
 			<li class="nav-item active">
 				<a class="nav-link" asp-controller="Ilan" asp-action="Create">
-					<span>İlanları Ekle</span>
+					<span>İlan Ekle</span>
 				</a>
 			</li>
+			<hr>
 			<li class="nav-item active">
 				<a class="nav-link" asp-controller="SoruCevap" asp-action="Index">
 					<span>Soruları İncele</span>
@@ -66,6 +67,7 @@
 					<span>Soru Ekle</span>
 				</a>
 			</li>
+			<hr>
 			<li class="nav-item active">
 				<a class="nav-link" asp-controller="Uyeler" asp-action="Index">
 					<span>Üyeleri İncele</span>
@@ -76,6 +78,7 @@
 					<span>Üye Ekle</span>
 				</a>
 			</li>
+
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			@*            <li class="nav-item">
@@ -131,19 +134,11 @@
 							   data-toggle="dropdown"
 							   aria-haspopup="true"
 							   aria-expanded="false">
-								<span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+								<span class="mr-2 d-none d-lg-inline text-yellow-600 big">Admin</span>
 							</a>
 							<!-- Dropdown - User Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
 								 aria-labelledby="userDropdown">
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-									Profil
-								</a>
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-									Ayarlar
-								</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item"
 								   asp-action="Logout" asp-controller="Account">
@@ -159,7 +154,7 @@
 					   role="button"
 					   aria-haspopup="true"
 					   aria-expanded="false">
-						<span class="mr-2 d-none d-lg-inline text-gray-600 small">Anasayfa</span>
+						<span class="mr-2 d-none d-lg-inline text-gray-600 big">Anasayfa</span>
 					</a>
 					<div class="topbar-divider d-none d-sm-block"></div>
 					<!-- Topbar Search -->

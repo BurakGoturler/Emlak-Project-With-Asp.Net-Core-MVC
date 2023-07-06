@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Emlak.Models;
+using System.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Emlak.Controllers
 {
@@ -45,7 +47,7 @@ namespace Emlak.Controllers
             {
                 return NotFound();
             }
-            ViewBag.resim=_context.Resims.Where(x=>x.IlanId == id).ToList();
+            ViewBag.resim = _context.Resims.Where(x => x.IlanId == id).ToList();
             return View(ilan);
         }
 
@@ -65,15 +67,15 @@ namespace Emlak.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([FromForm] Ilan ilan)
         {
-			_context.Add(ilan);
-			if (ModelState.IsValid)
+            _context.Add(ilan);
+            if (ModelState.IsValid)
             {
-				if (ilan.ImageFile != null && ilan.ImageFile.Count > 0)
+                if (ilan.ImageFile != null && ilan.ImageFile.Count > 0)
                 {
                     foreach (var item in ilan.ImageFile)
                     {
                         var uniqueFileName = Guid.NewGuid().ToString() + "_" + item.FileName;
-                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "~/image", uniqueFileName);
+                        var filePath = Path.Combine("~/image", uniqueFileName); //Directory.GetCurrentDirectory(), 
 
                         using (var fileStream = new FileStream(filePath, FileMode.Create))
                         {
@@ -121,8 +123,6 @@ namespace Emlak.Controllers
         }
 
         // POST: Ilan/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Fiyat,Durum,Tip,Alan,OdaSayisi,BanyoSayisi,Kat,Adres,Mahalle,Semt,Sehir,Telefon,Tarih,Aciklama,Resim")] Ilan ilan)
@@ -198,14 +198,14 @@ namespace Emlak.Controllers
             {
                 _context.Ilans.Remove(ilan);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool IlanExists(int id)
         {
-          return (_context.Ilans?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Ilans?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

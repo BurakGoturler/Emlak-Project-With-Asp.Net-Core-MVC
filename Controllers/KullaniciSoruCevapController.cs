@@ -15,8 +15,8 @@ namespace Emlak.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return _context.SoruCevaps != null ?
-                        View(await _context.SoruCevaps.Where(x => x.Cevap != null).ToListAsync()) : // cevabı olmayan soruları listeleme
+            return _context.SoruCevaps != null ? // context.SoruCevaps eğer boş değilse döndür.
+						View(await _context.SoruCevaps.Where(x => x.Cevap != null).ToListAsync()) : // cevabı olmayan soruları listeleme
                         Problem("Entity set 'EmlakContext.SoruCevaps'  is null.");
         }
 
@@ -26,8 +26,6 @@ namespace Emlak.Controllers
         }
 
         // POST: SoruCevap/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Ad,Tarih,Soru")] SoruCevap soruCevap)

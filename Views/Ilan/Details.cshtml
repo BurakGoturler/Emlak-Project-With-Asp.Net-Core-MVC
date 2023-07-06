@@ -100,8 +100,24 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.TipNavigation.Tip1)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Resims)
+        </dt>
+        <dd class = "col-sm-10">
+            @foreach (var item in Model.Resims)
+            {
+                <img src="@item.Resim1" /><br />
+                <h2>Resim Yolu: </h2>
+              @Html.DisplayFor(model => item.Resim1)
+            }
+        </dd>
     </dl>
 </div>
+@*<h1>
+    Resim yolu : 
+</h1>
+<img src="~/image/0efef92d-488a-4dee-befc-1304d0acba9e_whatsapp görsel 2023-06-24 saat 19.48.59.jpg" />
+<img src="~/image/deneme.png" />*@
 <div>
     <a asp-action="Index">Geri Dön</a>
 </div>

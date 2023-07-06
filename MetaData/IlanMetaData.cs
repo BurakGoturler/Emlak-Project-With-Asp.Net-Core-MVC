@@ -48,7 +48,8 @@ public class IlanMetaData
     [AllowHtml]
     public string? Aciklama { get; set; }
 
-    public int? Resim { get; set; }
+	[Display(Name = "Resim")]
+	public int? Resim { get; set; }
 
     [Display(Name = "Durum")]
     public virtual Durum? DurumNavigation { get; set; }

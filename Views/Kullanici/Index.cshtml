@@ -5,6 +5,8 @@
 	ViewData["Title"] = "Index";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 
+
+	// Burası siteye giren kullanıcnın oturum açıp açmadığını kontrol edip kullanıcı adı ve rolünü alıyor.
 	var username = "";
 	var role = "";
 	if (User.Identity.IsAuthenticated) // oturum açtı mı?
@@ -14,20 +16,22 @@
 	}
 }
 
-@*@if (User.Identity.IsAuthenticated)
+@if (User.Identity.IsAuthenticated)
 {
 	<text>
 		<div>
-			User Name : @username
+			 Hoşgeldiniz @username
 		</div>
 	</text>
-}*@
+}
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>İlanlar</title>
 	<style>
+
+
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f2f2f2;

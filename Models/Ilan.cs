@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Emlak.Models;
 
@@ -39,7 +41,8 @@ public partial class Ilan
 
     public virtual Mahalle? MahalleNavigation { get; set; }
 
-    public virtual ICollection<Resim> Resims { get; set; } = new List<Resim>();
+	[Display(Name = "Resim")]
+	public virtual ICollection<Resim> Resims { get; set; } = new List<Resim>();
 
     public virtual Sehir? SehirNavigation { get; set; }
 
