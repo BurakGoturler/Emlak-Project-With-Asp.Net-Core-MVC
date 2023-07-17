@@ -33,8 +33,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication();
-app.UseAuthorization(); // yetkilendirme
+app.UseAuthentication(); // Kullanýcý bilgilerinin doðrulamasýný yapýyor. Oturum açma iþlemlerinin kontrol edildiði middleware.
+app.UseAuthorization(); // Yetkilendirme iþlemlerini gerçekleþtiriyor. Kullanýcýnýn eriþim izinlerini denetlemek için gerekli olan rolleri ve izinleri kontrol eden middleware.
 
 app.MapControllerRoute(
 	name: "default",

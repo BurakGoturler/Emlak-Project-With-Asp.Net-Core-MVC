@@ -34,7 +34,7 @@
 							bool role;
 							if (User.Identity.IsAuthenticated) // oturum açtı mı?
 							{
-								role = (User.FindFirst(ClaimTypes.NameIdentifier).Value == "Admin");
+								role = (User.FindFirst(ClaimTypes.NameIdentifier).Value == "Admin" );
 							}
 							else
 							{

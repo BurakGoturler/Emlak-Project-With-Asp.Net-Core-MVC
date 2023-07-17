@@ -95,13 +95,13 @@ namespace Emlak.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) // modele bağlı nesne geçerli mi?
             {
                 try
                 {
-                    _context.Update(kullanicilar);
-                    await _context.SaveChangesAsync();
-                }
+                    _context.Update(kullanicilar); // doğrulanırsa güncelliyor.
+                    await _context.SaveChangesAsync(); //  yapılan değişiklikleri veritabanına kaydetmek için asenkron olarak beklenir.
+				}
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!KullanicilarExists(kullanicilar.Id))
