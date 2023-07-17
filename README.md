@@ -2,6 +2,7 @@
 
 Üniversite'de Sistem Analizi ve Tasarımı dersinde bitirme projesi olarak verdiğim, MVC yapısına uygun, C# programlama dili ve Microsoft SQL Server kullanarak yapmış olduğum Emlak sitesi projem.
 <hr>
+
 ## Özellikler
 
 Proje genelinde 2 adet rol kullandım.
