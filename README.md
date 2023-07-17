@@ -20,6 +20,8 @@ Proje genelinde 2 adet rol kullandım. Bunlar, Admin ve Üye.
 -> Resimli ilan eklenmiyor, hata veriyor.
 
 -> İlan Listeleme mevcut değil.
+
+-> Üye soru sorduktan sonra direkt soruların listelendiği sayfaya yönlendiriyor, yönlendirmeden önce üye'ye sorduğu sorunun iletildiğine dair bilgilendirme mesajını kapsayan bir sayfa eklenecek.
 <hr>
 
 Kullanılan teknolojiler, yapılar ve diller: C#, HTML5, CSS3, Javascipt, Bootstrap, Jquery, Razor, Asp.Net Framework, MVC.
