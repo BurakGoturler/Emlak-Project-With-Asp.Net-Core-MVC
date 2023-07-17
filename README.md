@@ -17,11 +17,10 @@ Proje genelinde 2 adet rol kullandım. Bunlar, Admin ve Üye.
 <hr>
 
 ## Projedeki Eksiklikler
--> Resimli ilan eklenemmiyor hata veriyor.
+-> Resimli ilan eklenenmiyor hata veriyor.
 
 -> İlan Listeleme mevcut değil.
 <hr>
-
 
 Kullanılan teknolojiler, yapılar ve diller: C#, HTML5, CSS3, Javascipt, Bootstrap, Jquery, Razor, Asp.Net Framework, MVC.
 
