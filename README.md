@@ -23,6 +23,13 @@ Kullandığım veri tabanı: Microsoft SQL Server
 
 Geliştirme ortamı: C#
 
+Üye
+Kullanıcı Adı: Burak
+Şifre 123
+
+Admin 
+Kullanıcı Adı: Admin
+Şifre: 123
 ## Veri Tabanı Diyagram
 
 
