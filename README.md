@@ -14,7 +14,7 @@ Emlak şubesinin yöneticisinin site içerisinde admin paneli ile birlikte kendi
 
 ## Kullanıcının Yapabildikleri
 
-##Adminin Yapabildikleri
+## Adminin Yapabildikleri
 
 ## Veri Tabanı Diyagram
 
