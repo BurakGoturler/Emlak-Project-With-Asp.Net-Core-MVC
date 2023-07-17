@@ -16,7 +16,7 @@ Admin aynı zamanda yetki yönetimini de yapıyor. Kullanıcıların rolünü ad
 Sorulan sorular admin paneline düşüyor, sitede sadece adminin cevap verdiği sorular listeleniyor.
 Emlak şubesinin yöneticisinin site içerisinde admin paneli ile birlikte kendilerine yapılan başvurular doğrultusunda dükkan ve ev başlıkları altında kiralık ve satılık olarak ilan ekleme işlemlerini yapıyor.
 <hr>
-## Projedeki eksiklikler
+#Projedeki eksiklikler
 -> Resimli ilan eklenemmiyor hata veriyor.
 -> İlan Listeleme mevcut değil.
 
