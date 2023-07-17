@@ -15,11 +15,12 @@ Admin aynı zamanda yetki yönetimini de yapıyor. Kullanıcıların rolünü ad
 Üye olarak giriş yapan kullanıcı ilanları,soruları listeliyor ve soru sorabiliyor. 
 Sorulan sorular admin paneline düşüyor, sitede sadece adminin cevap verdiği sorular listeleniyor.
 Emlak şubesinin yöneticisinin site içerisinde admin paneli ile birlikte kendilerine yapılan başvurular doğrultusunda dükkan ve ev başlıkları altında kiralık ve satılık olarak ilan ekleme işlemlerini yapıyor.
-<hr>
+
 
 ##Projedeki Eksiklikler
 
 -> Resimli ilan eklenemmiyor hata veriyor.
+
 -> İlan Listeleme mevcut değil.
 
 Kullanılan teknolojiler, yapılar ve diller: C#, HTML5, CSS3, Javascipt, Bootstrap, Jquery, Razor, Asp.Net Framework, MVC.
