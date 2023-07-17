@@ -13,7 +13,9 @@ Sorulan sorular admin paneline düşüyor, sitede sadece adminin cevap verdiği 
 Emlak şubesinin yöneticisinin site içerisinde admin paneli ile birlikte kendilerine yapılan başvurular doğrultusunda dükkan ve ev başlıkları altında kiralık ve satılık olarak ilan ekleme işlemlerini yapıyor.
 
 Kullanılan teknolojiler, yapılar ve diller: C#, HTML5, CSS3, Javascipt, Bootstrap, Jquery, Razor, Asp.Net Framework, MVC.
+
 Kullandığım veri tabanı: Microsoft SQL Server
+
 Geliştirme ortamı: C#
 
 ## Veri Tabanı Diyagram
