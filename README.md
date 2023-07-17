@@ -19,7 +19,7 @@ Proje genelinde 2 adet rol kullandım. Bunlar, Admin ve Üye.
 ## Projedeki Eksiklikler
 -> Resimli ilan eklenmiyor, hata veriyor.
 
--> İlan Listeleme mevcut değil.
+-> ilanları filtreleme mevcut değil.
 
 -> Üye soru sorduktan sonra direkt soruların listelendiği sayfaya yönlendiriyor, yönlendirmeden önce üye'ye sorduğu sorunun iletildiğine dair bilgilendirme mesajını kapsayan bir sayfa eklenecek.
 <hr>
