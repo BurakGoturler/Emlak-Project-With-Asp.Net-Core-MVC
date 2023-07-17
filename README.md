@@ -3,6 +3,12 @@
 Üniversite'de Sistem Analizi ve Tasarımı dersinde bitirme projesi olarak verdiğim, MVC yapısına uygun, C# programlama dili ve Microsoft SQL Server kullanarak yapmış olduğum Emlak sitesi projem.
 
 ## Özellikler
+
+Proje genelinde 2 adet rol kullandım. 
+Bunlar, Admin ve Üye. 
+Admin ve Üye için iki ayrı Layout kullandım. 
+Bunlar ise _Layout ve Admin_Layout.
+
 Login ve Register işlemlerini Authentication ve Authorization'nı birlikte kullanarak yapılandırdım. Cookie Authentication kimlik doğrulama ve yetkilendirme süreçleri için kullandım. Bu yöntem ile kullanıcıların oturum açma bilgilerini yani kullanıcı adı ve şifresini doğrulamak için bir kimlik doğrulama sunucusuna göndermek yerine, kullanıcıların tarayıcılarına bir oturum kimliği olarak bilinen bir çerez yerleştirdim.
 
 Admin olarak giriş yapan kullanıcı admin paneline ulaşarak ilanları, soruları ve sitede kayıtlı kullanıcıları listeleyebiliyor, ekleyebiliyor, düzenleyebiliyor ve silebiliyor. 
