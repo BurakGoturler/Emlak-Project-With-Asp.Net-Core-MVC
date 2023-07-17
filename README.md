@@ -11,7 +11,7 @@ Login ve Register işlemlerini Authentication ve Authorization'nı birlikte kull
 <hr>
 Admin olarak giriş yapan kullanıcı admin paneline ulaşarak ilanları, soruları ve sitede kayıtlı kullanıcıları listeleyebiliyor, ekleyebiliyor, düzenleyebiliyor ve silebiliyor. 
 Admin aynı zamanda yetki yönetimini de yapıyor. Kullanıcıların rolünü admin ve üye olarak değiştirebiliyor.
-
+<hr>
 Üye olarak giriş yapan kullanıcı ilanları,soruları listeliyor ve soru sorabiliyor. 
 Sorulan sorular admin paneline düşüyor, sitede sadece adminin cevap verdiği sorular listeleniyor.
 Emlak şubesinin yöneticisinin site içerisinde admin paneli ile birlikte kendilerine yapılan başvurular doğrultusunda dükkan ve ev başlıkları altında kiralık ve satılık olarak ilan ekleme işlemlerini yapıyor.
