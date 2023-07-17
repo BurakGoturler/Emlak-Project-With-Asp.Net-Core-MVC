@@ -4,9 +4,12 @@
 
 ## Özellikler
 
-Proje genelinde 2 adet rol kullandım. 
-Bunlar, Admin ve Üye. 
-Admin ve Üye için iki ayrı Layout kullandım. 
+Proje genelinde 2 adet rol kullandım.
+
+Bunlar, Admin ve Üye.
+
+Admin ve Üye için iki ayrı Layout kullandım.
+
 Bunlar ise _Layout ve Admin_Layout.
 
 Login ve Register işlemlerini Authentication ve Authorization'nı birlikte kullanarak yapılandırdım. Cookie Authentication kimlik doğrulama ve yetkilendirme süreçleri için kullandım. Bu yöntem ile kullanıcıların oturum açma bilgilerini yani kullanıcı adı ve şifresini doğrulamak için bir kimlik doğrulama sunucusuna göndermek yerine, kullanıcıların tarayıcılarına bir oturum kimliği olarak bilinen bir çerez yerleştirdim.
