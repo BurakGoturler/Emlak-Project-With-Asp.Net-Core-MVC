@@ -23,6 +23,8 @@ Kullandığım veri tabanı: Microsoft SQL Server
 
 Geliştirme ortamı: C#
 
+<hr>
+
 Üye
 Kullanıcı Adı: Burak
 
