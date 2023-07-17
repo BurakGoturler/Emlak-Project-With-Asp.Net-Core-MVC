@@ -17,7 +17,7 @@ Proje genelinde 2 adet rol kullandım. Bunlar, Admin ve Üye.
 <hr>
 
 ## Projedeki Eksiklikler
--> Resimli ilan eklenenmiyor hata veriyor.
+-> Resimli ilan eklenmiyor, hata veriyor.
 
 -> İlan Listeleme mevcut değil.
 <hr>
