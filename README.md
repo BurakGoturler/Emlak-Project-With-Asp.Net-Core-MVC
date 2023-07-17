@@ -4,7 +4,7 @@
 
 ## Özellikler
 
-<h1>Kullanıcının Yapabildikleri</h1>
+###Kullanıcının Yapabildikleri
 
-<h1>Adminin Yapabildikleri</h1>
+###Adminin Yapabildikleri
 
