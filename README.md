@@ -1,6 +1,6 @@
 # Emlak Sitesi
 
-Üniversite'de Sistem Analizi ve Tasarımı dersinde bitirme projesi olarak verdiğim, MVC yapısına uygun, C# programlama dili ve Microsoft SQL Server kullanarak yapmış olduğum Emlak sitesi projem.
+Sistem Analizi ve Tasarımı dersinde bitirme projesi olarak verdiğim, MVC yapısına uygun, C# programlama dili ve Microsoft SQL Server kullanarak yapmış olduğum Emlak sitesi projem.
 <hr>
 
 ## Özellikler
