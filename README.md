@@ -17,6 +17,10 @@ Proje genelinde 2 adet rol kullandım. Bunlar, Admin ve Üye.
 <hr>
 
 ## Projedeki Eksiklikler
+-> Ödenecek fiyatın döviz türü belli değil, eklenecek.
+
+-> Ödeme türü seçme yok Kredi/Nakit, eklenecek.
+
 -> Resimli ilan eklenmiyor, hata veriyor.
 
 -> ilanları filtreleme mevcut değil.
