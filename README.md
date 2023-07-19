@@ -32,7 +32,7 @@ Kullanılan teknolojiler, yapılar ve diller: C#, HTML5, CSS3, Javascipt, Bootst
 
 Kullandığım veri tabanı: Microsoft SQL Server
 
-Geliştirme ortamı: C#
+Geliştirme ortamı: Visual Studio
 <hr>
 Üye
 
